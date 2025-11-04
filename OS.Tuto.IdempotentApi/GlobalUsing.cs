@@ -1,0 +1,13 @@
+﻿global using System.Security.Cryptography;
+global using System.Text;
+global using System.Text.Json;
+global using OS.Tuto.IdempotentApi.Data;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.Caching.Memory;
+global using System.Net.Mime;
+global using OS.Tuto.IdempotentApi.Domain;
+global using OS.Tuto.IdempotentApi.Dtos;
+global using OS.Tuto.IdempotentApi.Idempotency;
+global using Microsoft.AspNetCore.Http.HttpResults;
+global using Microsoft.Extensions.Http.Resilience;
+global using Polly;

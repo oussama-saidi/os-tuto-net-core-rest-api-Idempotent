@@ -1,0 +1,21 @@
+name: build-test
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+      - name: Restore
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --no-restore -c Release
+      - name: EF Migrations compile check
+        run: dotnet ef migrations script --project IdempotentApi --output /tmp/m.sql
+      - name: Test client compile
+        run: dotnet build Client/Client.csproj -c Release

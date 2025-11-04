@@ -1,0 +1,6 @@
+@OS.Tuto.IdempotentApi_HostAddress = http://localhost:5207
+
+GET {{OS.Tuto.IdempotentApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

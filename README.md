@@ -50,18 +50,18 @@ OS.Tuto.IdempotentApi/
 
 ```bash
 git clone https://github.com/oussama-saidi/os-tuto-net-core-rest-api-Idempotent.git
-cd IdempotentApi
+cd OS.Tuto.IdempotentApi
 dotnet restore
 ```
 ### 2️⃣ Run database migrations
 ```bash
 dotnet tool install --global dotnet-ef
-dotnet ef migrations add Init --project IdempotentApi
-dotnet ef database update --project IdempotentApi
+dotnet ef migrations add Init --project OS.Tuto.IdempotentApi
+dotnet ef database update --project OS.Tuto.IdempotentApi
 ```
 ### 3️⃣ Start the API
 ```bash
-dotnet run --project IdempotentApi
+dotnet run --project OS.Tuto.IdempotentApi
 ```
 
 💳 Test the idempotent endpoint
@@ -175,7 +175,7 @@ jobs:
           dotnet-version: 9.0.x
       - run: dotnet restore
       - run: dotnet build --no-restore -c Release
-      - run: dotnet ef migrations script --project IdempotentApi
+      - run: dotnet ef migrations script --project OS.Tuto.IdempotentApi
 ```
 
 ☁️ Scaling out (distributed cache)
